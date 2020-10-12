@@ -1,0 +1,45 @@
+/*
+ * @Author: mikey.wf 
+ * @Date: 2020-09-27 10:15:18 
+ * @Last Modified by: mikey.wf
+ * @Last Modified time: 2020-09-29 10:11:17
+ */
+$bgColor:#f6f6f6;
+$titleFontSize:1.3rem;
+$titleColor:#1e90ff;
+$contextColor:#777;
+
+body {
+  background-color:$bgColor;
+}
+.comm-left{
+  background-color: #fff;
+  padding: .3rem;
+  border-radius: .3rem;
+  border-bottom: 1px solid #eee;
+}
+.comm-box{
+  @extend .comm-left;
+  margin-left: .5rem;
+}
+.comm-main{
+  margin-top: .5rem;
+}
+
+.list-title{
+  font-size: $titleFontSize;
+  color:$titleColor;
+  padding: 0 .5rem;
+}
+.list-context{
+  color: $contextColor;
+  padding: .5rem;
+}
+.list-icon{
+  padding: .5rem 0;
+  color: #aaa;
+  span{
+    display: inline-block;
+    padding: 0 10px;
+  }
+}
