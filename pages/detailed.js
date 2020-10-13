@@ -2,7 +2,7 @@
  * @Author: mikey.wf 
  * @Date: 2020-09-28 14:51:14 
  * @Last Modified by: mikey.wf
- * @Last Modified time: 2020-10-13 09:59:19
+ * @Last Modified time: 2020-10-13 14:12:00
  */
 
 import React from 'react'
@@ -69,7 +69,7 @@ const Detailed = (props) => {
             <div className="bread-div">
               <Breadcrumb>
                 <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-                <Breadcrumb.Item><a href={"/list?id=1&title=" + props.typeName}>{props.typeName}</a></Breadcrumb.Item>
+                <Breadcrumb.Item><a href={"/list?id=" + props.typeId + "&title=" + props.typeName}>{props.typeName}</a></Breadcrumb.Item>
                 <Breadcrumb.Item>XXXx</Breadcrumb.Item>
               </Breadcrumb>
             </div>
