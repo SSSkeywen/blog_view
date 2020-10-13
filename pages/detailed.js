@@ -2,7 +2,7 @@
  * @Author: mikey.wf 
  * @Date: 2020-09-28 14:51:14 
  * @Last Modified by: mikey.wf
- * @Last Modified time: 2020-10-10 17:03:46
+ * @Last Modified time: 2020-10-13 09:59:19
  */
 
 import React from 'react'
@@ -20,15 +20,15 @@ import {
   FolderOutlined,
   FireOutlined,
 } from '@ant-design/icons';
-import ReactMarkdown from 'react-markdown'
-import MarkNav from 'markdown-navbar'
+// import ReactMarkdown from 'react-markdown'
+// import MarkNav from 'markdown-navbar'
 import 'markdown-navbar/dist/navbar.css'
-
 import marked from 'marked'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/monokai-sublime.css'
-
 import Tocify from '../components/tocify.tsx'
+
+import servicePath from '../config/apiUrl'
 
 
 const Detailed = (props) => {
@@ -69,7 +69,7 @@ const Detailed = (props) => {
             <div className="bread-div">
               <Breadcrumb>
                 <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-                <Breadcrumb.Item><a href="/">视频列表</a></Breadcrumb.Item>
+                <Breadcrumb.Item><a href={"/list?id=1&title=" + props.typeName}>{props.typeName}</a></Breadcrumb.Item>
                 <Breadcrumb.Item>XXXx</Breadcrumb.Item>
               </Breadcrumb>
             </div>
@@ -117,7 +117,7 @@ const Detailed = (props) => {
 Detailed.getInitialProps = async (context) => {
   let id = context.query.id
   const promise = new Promise((resolve) => {
-    axios('http://127.0.0.1:7001/default/getArticleById/' + id).then((res) => {
+    axios(servicePath.getArticleById + id).then((res) => {
       console.log(res)
       resolve(res.data.data[0])
     })
